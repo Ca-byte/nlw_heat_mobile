@@ -89,10 +89,13 @@ function AuthProvider({ children }: AuthProviderProps) {
         ] = `Bearer ${TOKEN_STORAGE}`;
         setUser(JSON.parse(userStorage));
       }
+
       setIsSigning(false);
     }
+
     loadUserStoreData();
   }, []);
+
   return (
     <AuthContext.Provider
       value={{

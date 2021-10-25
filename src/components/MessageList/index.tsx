@@ -13,9 +13,10 @@ let messagesQueue: MessageProps[] = MESSAGES_EXAMPLE;
 
 const socket = io(String(api.defaults.baseURL));
 socket.on("new_message", (newMessage) => {
+  console.log("message: ", newMessage);
   messagesQueue.push(newMessage);
-  console.log(newMessage);
 });
+
 export function MessageList() {
   const [messages, setMessages] = useState<MessageProps[]>([]);
 
@@ -24,6 +25,7 @@ export function MessageList() {
       const messageResponse = await api.get<MessageProps[]>("/messages/last3");
       setMessages(messageResponse.data);
     }
+
     fetchMessages();
   }, []);
 
@@ -35,9 +37,11 @@ export function MessageList() {
           prevState[0],
           prevState[1],
         ]);
+
         messagesQueue.shift();
       }
-    }, 3000);
+    }, 2000);
+
     return () => clearInterval(timer);
   }, []);
 
@@ -48,7 +52,7 @@ export function MessageList() {
       keyboardShouldPersistTaps="never"
     >
       {messages.map((message) => {
-        <Message key={message.id} data={message} />;
+        return <Message key={message.id} data={message} />;
       })}
     </ScrollView>
   );
