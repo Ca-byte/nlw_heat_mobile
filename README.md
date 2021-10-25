@@ -8,7 +8,7 @@
 ## 💻 Projeto
 Aplicação desenvolvida para o evento DoWhile 2021, onde as pessoas podem acessar e compartilhar suas expectativas para o DoWhile. 
 
-Nesta versão o usuário poderá realizar login via Github e, após feito o login, enviar mensagens de expectativa para o evento.
+Nesta versão Mobile o usuário poderá realizar login via Github e após feito o login, enviar mensagens de expectativa para o evento.
 
 Logado ou não, o usuário visualiza em tempo real as mensagens enviadas por outras pessoas dentro da aplicação. As mensagens serão exibidas continuamente e, conforme novas mensagens vão sendo recebidas, as anteriores vão sendo removidas de tela com um tempo de exibição mínimo de 3 segundos, ou seja, toda mensagem fica em tela no mínimo por esse tempo.
 
